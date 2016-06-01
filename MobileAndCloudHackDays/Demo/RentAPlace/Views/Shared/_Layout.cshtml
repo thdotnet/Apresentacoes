@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/search.css" rel="stylesheet" />
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var searchApp = {};
+        searchApp.map = {};
+        searchApp.markers = [];
+
+
+        function initialize() {
+            var address = new google.maps.LatLng(-23.549894, -46.6361438);
+            var address2 = new google.maps.LatLng(-23.5447806, -46.6358978);
+
+            var mapProp = {
+                center: address,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            searchApp.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: address,
+            });
+
+            var marker2 = new google.maps.Marker({
+                position: address2
+            });
+
+            searchApp.markers.push(marker);
+            searchApp.markers.push(marker2);
+
+            marker.setMap(searchApp.map);
+            marker2.setMap(searchApp.map);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+    @RenderBody()
+    @RenderSection("scripts")
+</body>
+
+</html> 

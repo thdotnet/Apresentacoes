@@ -1,0 +1,22 @@
+﻿a{
+    left:50px;
+    position:relative;
+}
+
+#dvFacets
+{
+    position:absolute;
+    top:50px;
+    right:0px;
+    background-color:#c0c0c0;
+    border:1px solid black;
+    width: 300px;
+}
+
+#cleanFilters {
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 8em;
+    margin-top: -2.5em;
+}
